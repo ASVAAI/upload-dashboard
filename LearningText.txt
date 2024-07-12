@@ -1,0 +1,4 @@
+for toogle
+
+https://medium.com/front-end-weekly/build-a-css-only-toggle-switch-using-tailwindcss-d2739882934
+ 
