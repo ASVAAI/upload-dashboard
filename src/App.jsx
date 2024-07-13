@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-fuchsia-400">
+      <div className="bg-fuchsia-40">
         <UploadDashPage/>
       </div>
       

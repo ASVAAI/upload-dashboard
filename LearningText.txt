@@ -2,3 +2,8 @@ for toogle
 
 https://medium.com/front-end-weekly/build-a-css-only-toggle-switch-using-tailwindcss-d2739882934
  
+
+issue to do 
+1. set the react router dom
+2. icons functionality in the table
+3. 
