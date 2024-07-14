@@ -1,11 +1,11 @@
 
-import { Content } from '../components'
+import { Content, ParserSubHeader } from '../components'
 
 function UploadDashPage() {
   return (
     <>
         <section className='bg-slate-0 p-2 '>
-            <Content/>
+            <ParserSubHeader/>
         </section>
     </>
   )

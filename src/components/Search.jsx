@@ -23,12 +23,12 @@ function Search({onSearch}) {
     }
   return (
     <div className=' relative w-full text-gray-600'>
-        <div className='flex border-gray-400 border-2'>
-            <div className='bg-white'>
+        <div className='flex border-gray-400 border rounded-full p-1'>
+            <div className=''>
                 <IconSearch/>
             </div>
             <div>
-                <input className='bg-white' placeholder='Search' onChange={handleChange}/>
+                <input className='bg-none' type='text' placeholder='Search' onChange={handleChange}/>
             </div>
         </div>
 {/* 

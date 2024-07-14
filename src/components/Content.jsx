@@ -70,14 +70,11 @@ function Content() {
             tags: ['resume','parser','content'],
         },
     ]
-    // console.log(data)
+  
     const[totalResume, setTotalResume] = useState(10);
 
     const [searchQuery, setSearchQuery] = useState('');
 
-    // const handleLength = (fileteredData) => {
-    //     setTotalResume(fileteredData.length)
-    // }
 
     const handleSearch = (query) => {
         setSearchQuery(query);
@@ -88,9 +85,9 @@ function Content() {
   return (
     <main>
         <div>
-            <div className="flex w-full py-4 bg-slate-00 justify-between">
+            <div className="flex w-full py-6 bg-gray-200 flex-col sm:flex-row sm:justify-between">
                 <div className="flex px-4 text-xl font-semibold"><h1>Parsed Resume&apos;s ({10})</h1></div>
-                <div className="flex">
+                <div className="flex px-3">
                     <div>
                         <Search data={data} onSearch ={handleSearch} />
                     </div>
