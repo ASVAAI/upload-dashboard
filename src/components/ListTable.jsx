@@ -13,7 +13,7 @@ function ListTable({data}) {
     const handleBgColor = (e)=> {
         setbgColor('bg-violet-200')
     }
-    
+    // max-h-screen
   return (
     <section className='max-w-full max-h-96 overflow-auto border border-violet-200 bg-gray-50'>
         <table className="min-w-full border-collapse border-spacing-2  text-sm ">

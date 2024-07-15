@@ -28,7 +28,7 @@ function Search({onSearch}) {
                 <IconSearch/>
             </div>
             <div>
-                <input className='bg-none' type='text' placeholder='Search' onChange={handleChange}/>
+                <input className='bg-inherit' type='text' placeholder='Search' onChange={handleChange}/>
             </div>
         </div>
 {/* 

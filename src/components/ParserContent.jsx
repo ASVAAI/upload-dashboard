@@ -6,7 +6,7 @@ import { IconArrowBarUp } from '@tabler/icons-react';
 import Search from "./Search";
 import Upload from "./Upload";
 
-function Content() {
+function ParserContent() {
     // give data to content as a props -- {data}
     const data = [
         {
@@ -69,6 +69,48 @@ function Content() {
             dateUploaded: "20 March 2024",
             tags: ['resume','parser','content'],
         },
+        {
+            id:11,
+            fileName:"Viren+Inaniyan_IIT+Bombay_Resume_1.pdfdssdfsddsf",
+            dateUploaded: "20 March 2024",
+            tags: ['resume','parser','content'],
+        },
+        {
+            id:12,
+            fileName:"Viren+Inaniyan_IIT+Bombay_Resume_1.pdfdssdfsddsf",
+            dateUploaded: "20 March 2024",
+            tags: ['resume','parser','content'],
+        },
+        {
+            id:13,
+            fileName:"Viren+Inaniyan_IIT+Bombay_Resume_1.pdfdssdfsddsf",
+            dateUploaded: "20 March 2024",
+            tags: ['resume','parser','content'],
+        },
+        {
+            id:14,
+            fileName:"Viren+Inaniyan_IIT+Bombay_Resume_1.pdfdssdfsddsf",
+            dateUploaded: "20 March 2024",
+            tags: ['resume','parser','content'],
+        },
+        {
+            id:15,
+            fileName:"Viren+Inaniyan_IIT+Bombay_Resume_1.pdfdssdfsddsf",
+            dateUploaded: "20 March 2024",
+            tags: ['resume','parser','content'],
+        },
+        {
+            id:16,
+            fileName:"Viren+Inaniyan_IIT+Bombay_Resume_1.pdfdssdfsddsf",
+            dateUploaded: "20 March 2024",
+            tags: ['resume','parser','content'],
+        },
+        {
+            id:17,
+            fileName:"Viren+Inaniyan_IIT+Bombay_Resume_1.pdfdssdfsddsf",
+            dateUploaded: "20 March 2024",
+            tags: ['resume','parser','content'],
+        },
     ]
   
     const[totalResume, setTotalResume] = useState(10);
@@ -84,7 +126,7 @@ function Content() {
 
   return (
     <main>
-        <div>
+        <div className=" ">
             <div className="flex w-full py-6 bg-gray-200 flex-col sm:flex-row sm:justify-between">
                 <div className="flex px-4 text-xl font-semibold"><h1>Parsed Resume&apos;s ({10})</h1></div>
                 <div className="flex px-3">
@@ -106,4 +148,4 @@ function Content() {
   )
 }
 
-export default Content
+export default ParserContent

@@ -1,19 +1,13 @@
-import { Route } from "react-router-dom"
+import { Outlet, Route } from "react-router-dom"
 import UploadDashPage from "./pages/UploadDashPage"
+import SettingPage from "./pages/SettingPage"
 
 function App() {
   
 
   return (
     <>
-      <div className="bg-fuchsia-00">
-        <UploadDashPage/>
-      </div>
-      {/* <Routes>
-        <Route path="/parse" element={<UploadDashPage/>}></Route>
-        <Route path="/settings" element={<UploadDashPage/>}></Route>
-      </Routes> */}
-      
+      <Outlet/>
     </>
   )
 }
