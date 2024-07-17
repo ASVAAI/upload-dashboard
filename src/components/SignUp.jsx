@@ -1,13 +1,51 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
 import {Input ,Logo} from './index'
-import  {useForm} from 'react-hook-form'
+import  {set, useForm} from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function SignUp() {
     const [error, setError] = useState('');
-    const {register, handleSubmit} = useForm("")
-    // console.log("het")
-    const submitForm = (data) => console.log(data)
+    const {register, handleSubmit , formState:{errors}} = useForm();
+    const navigate = useNavigate();
+   
+    const submitForm = async (formdata) => {
+
+        try {
+            
+            const payload = JSON.stringify(formdata);
+            
+            const config = {
+                method: 'post',
+                maxBodyLength: Infinity,
+                url: 'http://backend-dev-env.eba-y8shitmz.ap-south-1.elasticbeanstalk.com/signup',
+                headers: { 
+                  'Content-Type': 'application/json'
+                },
+                data : payload
+              };
+
+            const response = await axios.request(config)
+         
+
+            if(response.status === 200){
+                navigate('/login')
+            }
+
+
+            else if(response.status === 400){
+                setError("minimum password should be of length with alpha numeric values")
+                console.log("errror :: response :: ",response)
+            }
+
+
+          } catch (error) {
+            console.log("Error :: signup::", error)
+            setError(error.response?.data?.message || "An unexpected error occurred.");
+          }
+
+    }
   return (
     <div>
         <div
@@ -35,17 +73,21 @@ function SignUp() {
                 <Input
                 placeholder="Your First Name"
                 type="text"
-                {...register("First_Name", {
-                    required: true,
+                {...register("first_name", {
+                    required: "First name is required"
                 })}
                 />
+                {errors.first_name && <p className="text-red-600">{errors.first_name.message}</p>}
+
                 <Input
                 placeholder="Your Last Name"
                 type="text"
-                {...register("Last_Name", {
-                    required: true,
+                {...register("last_name", {
+                    required: "Last name is required",
                 })}
                 />
+                {errors.last_name && <p className="text-red-600">{errors.last_name.message}</p>}
+                
                 <Input
                 placeholder="Enter Your Email"
                 type="email"
@@ -57,13 +99,24 @@ function SignUp() {
                     }
                 })}
                 />
+                {errors.email && <p className="text-red-600">{errors.email.message}</p>}
                 <Input
                 type="password"
                 placeholder="Enter Your Password"
                 {...register("password", {
-                    required: true,
+                    required: "Password is required",
+                    minLength : {
+                        value : 8,
+                        message : "Password must be at least 8 characters long"
+                    },
+                    pattern : {
+                        value : /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                        message : "Password must contain 8 letters with numbers, and symbols"
+                    }
                 })}
                 />
+
+                {errors.password && <p className="text-red-600">{errors.password.message}</p>}
                 <button
                 type="submit"
                 className="w-full bg-violet-500 hover:bg-violet-400 rounded h-full py-1 text-violet-50 text-xl font-semibold"

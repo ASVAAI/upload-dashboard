@@ -1,13 +1,49 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
 import {Input ,Logo} from './index'
-import  {useForm} from 'react-hook-form'
+import  {set, useForm} from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function Login() {
     const [error, setError] = useState('');
-    const {register, handleSubmit} = useForm("")
-    // console.log("het")
-    const submitForm = (data) => console.log(data) 
+    const {register, handleSubmit} = useForm("");
+    const navigate = useNavigate();
+
+    const submitForm = async (data) => {
+
+        try {
+
+            let payload = JSON.stringify(data);
+
+            let config = {
+                method: 'post',
+                maxBodyLength: Infinity,
+                url: 'http://backend-dev-env.eba-y8shitmz.ap-south-1.elasticbeanstalk.com/login',
+                headers: { 
+                  'Content-Type': 'application/json'
+                },
+                data : payload
+              };
+
+            const response = await axios.request(config);
+          
+            if(response.status === 200){
+                const tokenValue = response.data.token;
+                localStorage.setItem("token",tokenValue);
+                navigate('/');
+            } else {
+                setError("Failed to login. Please check your credentials and try again.");
+            }
+            
+
+          } catch (error) {
+            console.log("Error :: Login :: ", error)
+            setError(error.response?.data?.message || "An unexpected error occurred.");
+          }
+        
+    }
+
   return (
       <div>
         <div

@@ -1,10 +1,9 @@
 import { useState } from "react";
 import ListTable from "./ListTable";
 import { IconFilterFilled } from '@tabler/icons-react';
-import Button from "./Button";
 import { IconArrowBarUp } from '@tabler/icons-react';
 import Search from "./Search";
-import Upload from "./Upload";
+import UploadDialog from "./UploadDialog";
 
 function ParserContent() {
     // give data to content as a props -- {data}
@@ -117,8 +116,14 @@ function ParserContent() {
 
     const [searchQuery, setSearchQuery] = useState('');
 
+    const [openUploadDialog, setOpenUploadDialog] = useState(false);
 
-    const handleSearch = (query) => {
+    const handleUploadDialog = (event) => {
+        event.stopPropagation();
+        setOpenUploadDialog(true);
+    }
+
+    const handleSearch = (query,) => {
         setSearchQuery(query);
     } 
 
@@ -134,9 +139,13 @@ function ParserContent() {
                         <Search data={data} onSearch ={handleSearch} />
                     </div>
                     <div><IconFilterFilled className="bg-gray-100 w-10 h-10 p-2 rounded-full text-gray-400 hover:text-violet-500 hover:bg-violet-200 shadow"/></div>
-                    <div className="flex bg-gray-100 text-gray-400 hover:text-violet-500 hover:bg-violet-200 rounded-full px-4 py-2 shadow">
+                    <div onClick={handleUploadDialog} className="flex bg-gray-100 text-gray-400 hover:text-violet-500 hover:bg-violet-200 rounded-full px-4 py-2 shadow cursor-pointer" 
+                    >
                         <IconArrowBarUp/>
-                        <Upload/>
+                        {"Upload"}
+                        {/* <UploadDialog/> */}
+
+                        {openUploadDialog && <UploadDialog  open = {openUploadDialog} setOpen = {setOpenUploadDialog}/>}
                     </div>
                 </div>
             </div>

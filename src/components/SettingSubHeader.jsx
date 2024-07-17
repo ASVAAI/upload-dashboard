@@ -4,10 +4,13 @@ import SettingContent from './SettingContent';
 import { useNavigate } from 'react-router-dom';
 
 function SettingSubHeader() {
+
     const navigate = useNavigate();
+    
     const handleNavigate = () =>{
         navigate('/')
     }
+
   return (
     <section>
         <div className='bg-gray-200 rounded-lg '>
