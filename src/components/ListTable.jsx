@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom'
 import { IconChevronRight } from '@tabler/icons-react';
 import { IconChevronLeft } from '@tabler/icons-react';
 import { IconPencil } from '@tabler/icons-react';
+import DeleteDialog from './DeleteDialog';
+import UploadDialog from './UploadDialog';
 
 function ListTable({data}) {
     
@@ -57,7 +59,7 @@ function ListTable({data}) {
                         </td>
                         <td className='px-2'>
                             <div className='flex justify-start gap-x-2'>
-                                {item.tags.map((each,index)=>(<p key={index} className='border-gray-400 border  rounded-full px-2'>{each}</p>))}
+                                {item.tags.map((each,index)=>(<p key={each} className='border-gray-400 border  rounded-full px-2'>{each}</p>))}
                             </div>
                         </td>
                         <td className='py-1 '>
@@ -83,6 +85,8 @@ function ListTable({data}) {
                 </div>
             </div>
         </div>
+        {/* <DeleteDialog/> */}
+        {/* <UploadDialog/> */}
     </section>
   )
 }

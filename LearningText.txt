@@ -7,3 +7,24 @@ issue to do
 1. set the react router dom
 2. icons functionality in the table
 3. 
+
+
+Vaibhav Vanage
+5:17 PM
+useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const token = localStorage.getItem("Token");
+        const userResponse = await fetch(
+          `${backendUrl}/user`,
+          {
+            headers: {
+              Authorization: `Token ${token}`,
+            },
+          }
+        );
+        if (!userResponse.ok) {
+          throw new Error("Failed to fetch user data");
+        }
+        const userData = await userResponse.json();
+        setAdmin(userData.admin);

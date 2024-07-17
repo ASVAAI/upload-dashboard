@@ -129,12 +129,12 @@ function ParserContent() {
         <div className=" ">
             <div className="flex w-full py-6 bg-gray-200 flex-col sm:flex-row sm:justify-between">
                 <div className="flex px-4 text-xl font-semibold"><h1>Parsed Resume&apos;s ({10})</h1></div>
-                <div className="flex px-3">
+                <div className="flex px-3 items-center space-x-4">
                     <div>
                         <Search data={data} onSearch ={handleSearch} />
                     </div>
-                    <div><IconFilterFilled/></div>
-                    <div className="flex">
+                    <div><IconFilterFilled className="bg-gray-100 w-10 h-10 p-2 rounded-full text-gray-400 hover:text-violet-500 hover:bg-violet-200 shadow"/></div>
+                    <div className="flex bg-gray-100 text-gray-400 hover:text-violet-500 hover:bg-violet-200 rounded-full px-4 py-2 shadow">
                         <IconArrowBarUp/>
                         <Upload/>
                     </div>

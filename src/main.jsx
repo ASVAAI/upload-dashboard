@@ -5,12 +5,16 @@ import './index.css'
 import { RouterProvider,createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
 import UploadDashPage from './pages/UploadDashPage.jsx'
 import SettingPage from './pages/SettingPage.jsx'
+import LoginPage from './pages/LoginPage.jsx'
+import SignUpPage from './pages/SignUpPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element = {<App/>}>
         <Route path = '/' element = {<UploadDashPage/>}/>
         <Route path = '/setting' element = {<SettingPage/>}/>
+        <Route path = '/login' element = {<LoginPage/>}/>
+        <Route path = '/signup' element = {<SignUpPage/>}/>
     </Route>
   )
 )
