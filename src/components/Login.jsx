@@ -4,6 +4,7 @@ import {Input ,Logo} from './index'
 import  {set, useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import conf from '../conf'
 
 function Login() {
     const [error, setError] = useState('');
@@ -19,7 +20,7 @@ function Login() {
             let config = {
                 method: 'post',
                 maxBodyLength: Infinity,
-                url: 'http://backend-dev-env.eba-y8shitmz.ap-south-1.elasticbeanstalk.com/login',
+                url:`${conf.BackendUrl}/login`,
                 headers: { 
                   'Content-Type': 'application/json'
                 },

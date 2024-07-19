@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
 import {Input ,Logo} from './index'
-import  {set, useForm} from 'react-hook-form'
+import  {useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import conf from '../conf'
 
 function SignUp() {
     const [error, setError] = useState('');
@@ -19,7 +20,7 @@ function SignUp() {
             const config = {
                 method: 'post',
                 maxBodyLength: Infinity,
-                url: 'http://backend-dev-env.eba-y8shitmz.ap-south-1.elasticbeanstalk.com/signup',
+                url: `${conf.BackendUrl}/signup`,
                 headers: { 
                   'Content-Type': 'application/json'
                 },

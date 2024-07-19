@@ -1,25 +1,29 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import conf from '../conf';
 
 function ParserHeader() {
   const navigate = useNavigate();
   
   const handleLogout = async() => {
       try {
-        // const config = {
-        //   method: 'post',
-        //   maxBodyLength: Infinity,
-        //   url: 'http://backend-dev-env.eba-y8shitmz.ap-south-1.elasticbeanstalk.com/logout',
-        //   headers: { 
-        //     'Authorization': 'Token 176e821916dd6f1f084b76fb65c4d95c7737cd64'
-        //   }
-        // };
-        // const response = await axios.request(config)
+        const getToken = localStorage.getItem("token")
+        const config = {
+          method: 'post',
+          maxBodyLength: Infinity,
+          url: `${conf.BackendUrl}/logout`,
+          headers: { 
+          'Authorization': `Token ${getToken}`
+          }
+        };
+        const response = await axios.request(config)
         // console.log(response)
-        localStorage.removeItem("token")
+        if(response){
+          localStorage.removeItem("token")
+          navigate('/signup')
+        }
         // console.log("after removing token")
-        navigate('/signup')
 
       } catch (error) {
         console.log("Error :: Logout :: ParseHeader ::", error)

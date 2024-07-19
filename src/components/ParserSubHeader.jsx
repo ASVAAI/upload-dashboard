@@ -5,9 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function ParserSubHeader() {
     const navigate = useNavigate();
-    const handleNavigate = (event) =>{
-        event.stopPropogation();
-        event.preventDefault();
+    const handleNavigate = () =>{
         navigate('/setting')
     }
   return (

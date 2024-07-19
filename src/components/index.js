@@ -17,6 +17,11 @@ import Logo from "./Logo"
 import Input from "./Input"
 import Login from "./Login"
 import SignUp from "./SignUp"
+import AnalyticsList from "./AnalyticsList"
+import AnalyticsSubHeader from "./AnalyticsSubHeader"
+import AnalyticsCalander from "./AnalyticsCalander"
+import AnalyticsChart from "./AnalyticsChart"
+import AnalyticHeader from "./AnalyticHeader"
 
 export {
 
@@ -39,6 +44,11 @@ export {
     Logo,
     Input,
     Login,
-    SignUp
+    SignUp,
+    AnalyticsList,
+    AnalyticsSubHeader,
+    AnalyticsCalander,
+    AnalyticsChart,
+    AnalyticHeader,
 
 }
