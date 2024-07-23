@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconAlertTriangle } from '@tabler/icons-react';
-function DeleteDialog({message,fileId,open, setOpen}) {
+function DeleteDialog({filesCount, open, setOpen, onDelete}) {
     if(!open)return null;
     const handleDialogBox = (e) =>{
         e.stopPropagation();
@@ -14,7 +14,7 @@ function DeleteDialog({message,fileId,open, setOpen}) {
                 <div className='box start px-4 '>
                     <div className='bg-red-100 h-20 w-20 p- flex justify-center items-center rounded-full'><IconAlertTriangle className='h-16 w-16 bg-red-300 p-3 rounded-full text-red-500/85  '/></div> 
                     <div className='text-2xl font-bold py-4'>Are you sure ?</div>                   
-                    <div className='text-gray-400 py-2 max-w-80 '>You are about to delete {message} and file id :{fileId}</div>
+                    <div className='text-gray-400 py-2 max-w-80 '>You are about to delete {filesCount} file(s)</div>
                     <div className='text-gray-400 py-4'>This action cannot be undone </div>                   
                     <div className='flex justify-between items-center gap-x-2 py-2'>
                         <button type='button' onClick={handleDialogBox} className='bg-gray-200 text-xl px-10 py-2 rounded-full'>Cancel</button>

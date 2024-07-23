@@ -8,6 +8,7 @@ import SettingPage from './pages/SettingPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import SignUpPage from './pages/SignUpPage.jsx'
 import AnalyticsPage from './pages/AnalyticsPage.jsx'
+import ParseContentPage from './pages/ParseContentPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
         <Route path = '/login' element = {<LoginPage/>}/>
         <Route path = '/signup' element = {<SignUpPage/>}/>
         <Route path = '/analytics' element = {<AnalyticsPage/>}/>
+        <Route path = '/parsePage' element = {<ParseContentPage/>}/>
     </Route>
   )
 )

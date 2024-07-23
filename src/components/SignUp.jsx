@@ -5,6 +5,7 @@ import  {useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import conf from '../conf'
+import GoogleLogo from '../assets/GoogleLogo.svg'
 
 function SignUp() {
     const [error, setError] = useState('');
@@ -48,28 +49,29 @@ function SignUp() {
 
     }
   return (
-    <div>
+    <div className='relative'>
+            <div className='absolute sm:top-1/2 sm:right-1/2 top-1/2 right-0 w-72 h-72 bg-purple-500 rounded-full filter blur-xl opacity-60 '></div>
+            <div className='absolute top-1/3 right-1/4  w-72 h-72 bg-purple-400 rounded-full  filter blur-xl opacity-70 '></div>
+            <div className='absolute top-0 right-1/2  w-72 h-72 bg-purple-400 rounded-full filter blur-xl opacity-60  '></div>
         <div
-            className='flex items-center justify-center w-full bg-gray-300 py-16'
-            >
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-        <div className="mb-2 flex justify-center">
+            className='flex items-center justify-center w-full bg-gray-300/20 py-16 relative min-h-screen'>
+            <div className={`mx-auto w-full max-w-lg bg-gray-200 rounded-xl p-10 border border-black/10 drop-shadow-xl`}>
+                <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo />
                     </span>
-        </div>
-        <h2 className="text-center text-2xl font-bold leading-tight">Start hiring with Asva AI</h2>
-        <p className="mt-2 text-center text-base text-black/60">
+                </div>
+                <h2 className="text-center text-2xl font-bold leading-tight">Start hiring with Asva AI</h2>
+                 <p className="mt-2 text-center text-base text-black/60">
                     Already have an account?&nbsp;
                     <Link
                         to="/login"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
-                    >
+                        className="font-medium text-primary transition-all duration-200 hover:underline">
                         Login
                     </Link>
-        </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-        <form onSubmit={handleSubmit(submitForm)} className='mt-8'>
+                 </p>
+                {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+                <form onSubmit={handleSubmit(submitForm)} className='mt-8'>
             <div className='space-y-5'>
                 <Input
                 placeholder="Your First Name"
@@ -120,11 +122,17 @@ function SignUp() {
                 {errors.password && <p className="text-red-600">{errors.password.message}</p>}
                 <button
                 type="submit"
-                className="w-full bg-violet-500 hover:bg-violet-400 rounded h-full py-1 text-violet-50 text-xl font-semibold"
+                className="w-full bg-violet-500 hover:bg-violet-400 rounded h-full py-2 text-violet-50 text-xl font-semibold"
                 >Sign In</button>
             </div>
-        </form>
-        </div>
+                </form>
+
+                <div className='flex mt-3 w-full bg-gray-300 hover:bg-gray-50 rounded h-full py-1 text-gray-400 text-xl font-semibold  drop-shadow-md justify-center items-center space-x-2 hover:text-'>
+                    <img src={GoogleLogo} alt = 'asva logo' width="40" height="40"/>
+                    <button type="button"
+                    className="">Sign in with Google</button>
+                </div>
+            </div>
         </div>
     </div>
   )

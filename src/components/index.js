@@ -22,6 +22,10 @@ import AnalyticsSubHeader from "./AnalyticsSubHeader"
 import AnalyticsCalander from "./AnalyticsCalander"
 import AnalyticsChart from "./AnalyticsChart"
 import AnalyticHeader from "./AnalyticHeader"
+import MultipleDeleteDialog  from './MultipleDeleteDialog'
+import ParsePageHeader from "./ParsePageHeader"
+import ParsePageSubHeader from "./ParsePageSubHeader"
+import ParsePageContent from "./ParsePageContent"
 
 export {
 
@@ -50,5 +54,10 @@ export {
     AnalyticsCalander,
     AnalyticsChart,
     AnalyticHeader,
+    MultipleDeleteDialog,
+    ParsePageHeader,
+    ParsePageSubHeader,
+    ParsePageContent,
+   
 
 }

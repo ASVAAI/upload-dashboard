@@ -5,6 +5,7 @@ import  {set, useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import conf from '../conf'
+import GoogleLogo from '../assets/GoogleLogo.svg'
 
 function Login() {
     const [error, setError] = useState('');
@@ -46,11 +47,14 @@ function Login() {
     }
 
   return (
-      <div>
+      <div className='relative overflow-hidden'>
+            <div className='absolute sm:top-1/2 sm:right-1/2 top-1/2 right-0 w-72 h-72 bg-purple-500 rounded-full filter blur-xl opacity-60  '></div>
+            <div className='absolute top-1/3 right-1/4  w-64 h-64 bg-purple-400 rounded-full  filter blur-xl opacity-70 '></div>
+            <div className='absolute top-20 right-1/2  w-72 h-72 bg-purple-400 rounded-full filter blur-xl opacity-60  '></div>
         <div
-            className='flex items-center justify-center w-full bg-gray-300 py-16'
+            className='flex items-center justify-center w-full bg-gray-300/20 py-16 relative min-h-screen'
             >
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10 drop-shadow-xl`}>
         <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo />
@@ -89,10 +93,15 @@ function Login() {
                 />
                 <button
                 type="submit"
-                className="w-full bg-violet-500 hover:bg-violet-400 rounded h-full py-1 text-violet-50 text-xl font-semibold"
+                className="w-full bg-violet-500 hover:bg-violet-400 rounded h-full py-2 text-violet-50 text-xl font-semibold"
                 >Login</button>
             </div>
         </form>
+        <div className='flex mt-3 w-full bg-gray-300 hover:bg-gray-50 rounded h-full py-1 text-gray-400 text-xl font-semibold  drop-shadow-md justify-center items-center space-x-2 hover:text-'>
+                    <img src={GoogleLogo} alt = 'asva logo' width="40" height="40"/>
+                    <button type="button"
+                    className="">Login with Google</button>
+                </div>
         </div>
         </div>
       </div>  

@@ -57,7 +57,14 @@ function AnalyticsChart() {
     let lastMonth;
     switch (filter) {
       case 'today':
-        filteredData = data.filter(item => new Date(item.Time).toDateString() === now.toDateString());
+        filteredData = data.filter(item => {
+          const itemDate = new Date(item.Time);
+          return (
+            itemDate.getDate() === now.getDate() &&
+            itemDate.getMonth() === now.getMonth() &&
+            itemDate.getFullYear() === now.getFullYear()
+          );
+        });
         break;
       case 'yesterday':
         yesterday = new Date(now);
@@ -85,6 +92,7 @@ function AnalyticsChart() {
         filteredData = data;
         break;
     }
+    console.log('Filtered Data:', filteredData); // Log the filtered data for debugging
     return filteredData;
   };
 
@@ -146,6 +154,7 @@ function AnalyticsChart() {
       backgroundColor: sourceColors[source],
       borderColor: sourceColors[source],
       borderWidth: 1,
+      // barThickness :20,
     }));
 
     setChartData({
