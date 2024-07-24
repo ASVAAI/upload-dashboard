@@ -26,6 +26,7 @@ import MultipleDeleteDialog  from './MultipleDeleteDialog'
 import ParsePageHeader from "./ParsePageHeader"
 import ParsePageSubHeader from "./ParsePageSubHeader"
 import ParsePageContent from "./ParsePageContent"
+import ParsePageJson from "./ParsePageJson"
 
 export {
 
@@ -58,6 +59,7 @@ export {
     ParsePageHeader,
     ParsePageSubHeader,
     ParsePageContent,
+    ParsePageJson,
    
 
 }

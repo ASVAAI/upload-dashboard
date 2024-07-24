@@ -20,8 +20,3 @@ function UploadDashPage() {
 
 export default UploadDashPage
 
-
-{/* <section className='bg-slate-0 p-2 '>
-            <ParserSubHeader/>
-        </section> */}
-{/* <ParserHeader/> */}

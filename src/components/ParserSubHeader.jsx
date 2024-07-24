@@ -1,13 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ParserContent from './ParserContent'
 import { IconSettingsFilled } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import conf from '../conf';
 
 function ParserSubHeader() {
+    const [error, setError] = useState('');
+    const [data,setData] = useState([]);
     const navigate = useNavigate();
     const handleNavigate = () =>{
         navigate('/setting')
     }
+
+    useEffect( ()=>{
+        // console.log("fetching....")
+        const fetchData = async()=>{
+            try {
+                const getToken = localStorage.getItem("token");
+                const config = {
+                    method: 'get',
+                    maxBodyLength: Infinity,
+                    url: `${conf.BackendUrl}/dashboard`,
+                    headers: { 
+                      'Authorization': `Token ${getToken}`
+                    }
+                  };
+    
+                  const response = await axios.request(config)
+    
+                  if(response) {
+                    // console.log("this is response",response);
+                    // console.log("this is data",response.data);
+                    setData(response.data.documents);
+                    // console.log("this is data documnet",response.data.documents);
+                    setError('');
+                  } else {
+                    setError("Failed to get user Data...")
+                  }
+    
+    
+            } catch (error) {
+                console.log("Error :: dashboard :: ",error)
+                setError(error.response?.data?.message || "An unexpected error occurred.");
+            }
+        };
+        fetchData();
+        // console.log("ending...")
+    },[])
   return (
     <section>
         <div className='bg-gray-200 rounded-lg '>
@@ -20,7 +60,8 @@ function ParserSubHeader() {
             </div>
             {/* nexted routes can come here */}
             <div className='p-2'>
-                <ParserContent/>
+            {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+                <ParserContent data = {data}/>
             </div>
         </div>
     </section>

@@ -117,18 +117,20 @@ function ListTable({data, onDeleteSingle, onDeleteMultiple}) {
                             />
                         </td>
                         <td className='px-2 flex justify-between pr-9  h-10 items-center group '>
-                            <div className='text-center'>{item.fileName}</div>
+                            <Link to={`/parsePage/${item.id}`}>
+                            <div className='text-center hover:font-semibold'>{item.file_name}</div>
+                            </Link>
                             <IconPencil className='text-gray-200 border-gray-200 border h-9 w-9 p-2 rounded-full shadow-md hover:text-gray-100 hover:bg-violet-100 hover:border-violet-400 invisible group-hover:visible fill-gray-500 hover:fill-gray-600'/>
                         </td>
                         <td className='px-2'>
-                            {item.dateUploaded}
+                            {item.uploaded_at}
                         </td>
                         <td className='px-2'>
                                     {/* for INTERGRATION PLATFORM             */}
                         </td>
                         <td className='px-2'>
                             <div className='flex justify-start gap-x-2'>
-                                {item.tags.map((each)=>(<p key={each} className='border-gray-400 border  rounded-full px-2'>{each}</p>))}
+                                {/* {item.tags.map((each)=>(<p key={each} className='border-gray-400 border  rounded-full px-2'>{each}</p>))} */}
                             </div>
                         </td>
                         <td className='py-1 '>
@@ -136,7 +138,7 @@ function ListTable({data, onDeleteSingle, onDeleteMultiple}) {
                                 <button type='button' >
                                     <IconTagFilled className='text-gray-400 border-gray-200 border h-9 w-9 p-2 rounded-full shadow-md hover:text-black hover:bg-violet-100 hover:border-violet-400'/>
                                 </button>
-                                <button type='button' onClick={(e)=>handleDeleteDialog(e, item.id, item.fileName)} >
+                                <button type='button' onClick={(e)=>handleDeleteDialog(e, item.id, item.file_name)} >
                                     <IconTrash className='text-red-500  border-gray-200 border shadow-md h-9 w-9 p-2 rounded-full hover:bg-violet-100 hover:border-violet-400'/>
                                 </button>
                             </div>
@@ -147,7 +149,7 @@ function ListTable({data, onDeleteSingle, onDeleteMultiple}) {
         </table>
         <div className='bg-emerald-00 '>
             <div className=' flex  text-sm space-x-2 px-4 items-center justify-center sm:justify-normal'>
-                <div className='font-semibold text-violet-500 text-center'>{1}-{10} of {10}</div>
+                <div className='font-semibold text-violet-500 text-center'>{1}-{10} of {data.length}</div>
                 <div className='flex space-x-2 p-1'>
                     <IconChevronLeft className='bg-gray-100 w-10 h-10 p-2 rounded-full text-gray-400  hover:text-violet-500 hover:bg-violet-200'/>
                     <IconChevronRight className='bg-gray-100 w-10 h-10 p-2 rounded-full text-gray-400 hover:text-violet-500 hover:bg-violet-200'/>

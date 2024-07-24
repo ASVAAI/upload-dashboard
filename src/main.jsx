@@ -18,7 +18,7 @@ const router = createBrowserRouter(
         <Route path = '/login' element = {<LoginPage/>}/>
         <Route path = '/signup' element = {<SignUpPage/>}/>
         <Route path = '/analytics' element = {<AnalyticsPage/>}/>
-        <Route path = '/parsePage' element = {<ParseContentPage/>}/>
+        <Route path = '/parsePage/:id' element = {<ParseContentPage/>}/>
     </Route>
   )
 )

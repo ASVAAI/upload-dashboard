@@ -1,7 +1,7 @@
 import React ,{useState}from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
-import { set } from 'react-hook-form';
+import conf from '../conf'
 
 function UploadDialog({open, setOpen}) {
 
@@ -40,7 +40,7 @@ function UploadDialog({open, setOpen}) {
             const getToken = localStorage.getItem("token")
 
             const response = await axios.post(
-                'http://backend-env.eba-y8shitmz.ap-south-1.elasticbeanstalk.com/parse-cv',
+                `${conf.BackendUrl}/parse-cv`,
                 formData,
                 {
                     headers: {
@@ -51,7 +51,8 @@ function UploadDialog({open, setOpen}) {
             );
             console.log(JSON.stringify(response.data));
             setOpen(false);
-            navigate('/parsePage',{state:{responseData:response.data}});
+            // navigate('/parsePage',{state:{responseData:response.data}});
+            navigate(`/parsePage/${response.data.document_id}`);
 
         } catch (error) {
             console.error('Error uploading file:',error);
@@ -84,7 +85,9 @@ function UploadDialog({open, setOpen}) {
                         <button 
                             type='button' 
                             className='bg-gray-200 text-xl px-10 py-2 rounded-full' 
-                            onClick={handleDialogBox}>
+                            onClick={handleDialogBox}
+                            hidden = {isLoading}
+                            >
                             Cancel
                         </button>
                         <button 
