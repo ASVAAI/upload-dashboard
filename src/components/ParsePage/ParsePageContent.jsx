@@ -10,7 +10,7 @@ function ParsePageContent({ data }) {
     <section className=''>
       <div className='flex flex-col  w-full'>
         <div className='bg-violet-00 w-full flex-col py-5 px-2 pb-10'>
-          <h1 className='text-3xl tracking-wider font-semibold px-1 py-1 '>{extractedJson.first_name || 'N/A'}</h1>
+          <h1 className='text-3xl tracking-wider font-semibold px-1 py-1 '>{extractedJson.first_name +" "+ extractedJson.last_name || 'N/A'}</h1>
           <h2 className='px-1 py-1 text-violet-500 text-xl font-semibold'>{extractedJson.current_title || 'N/A'}</h2>
         </div>
 

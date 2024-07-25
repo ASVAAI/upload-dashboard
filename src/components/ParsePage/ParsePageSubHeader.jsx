@@ -15,7 +15,7 @@ function ParsePageSubHeader({data}) {
     const navigate = useNavigate();
 
     const handleNavigate = () =>{
-        navigate('/')
+        navigate('/app/upload')
     }
 
     const[isOpenJSON,setOpenJSON] = useState(false);

@@ -34,7 +34,7 @@ function Login() {
             if(response.status === 200){
                 const tokenValue = response.data.token;
                 localStorage.setItem("token",tokenValue);
-                navigate('/');
+                navigate('/app/upload');
             } else {
                 setError("Failed to login. Please check your credentials and try again.");
             }

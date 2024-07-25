@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import ParserContent from './ParserContent'
-import { IconSettingsFilled } from '@tabler/icons-react';
-import { useNavigate } from 'react-router-dom';
+// import { IconSettingsFilled } from '@tabler/icons-react';
+// import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import conf from '../../conf';
 
 function ParserSubHeader() {
     const [error, setError] = useState('');
     const [data,setData] = useState([]);
-    const navigate = useNavigate();
-    const handleNavigate = () => {
-        navigate('/setting')
-    }
+    // const navigate = useNavigate();
+    // const handleNavigate = () => {
+    //     navigate('/setting')
+    // }
 
     const fetchData = async()=>{
       try {

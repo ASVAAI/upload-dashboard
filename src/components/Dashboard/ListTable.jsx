@@ -156,7 +156,7 @@ function ListTable({data,refetchData}) {
                             />
                         </td>
                         <td className='px-2 flex justify-between pr-9  h-10 items-center group '>
-                            <Link to={`/parsePage/${item.id}`}>
+                            <Link to={`/app/parsePage/${item.id}`}>
                             <div className='text-center hover:font-semibold hover:underline '>{item.file_name}</div>
                             </Link>
                             <IconPencil className='text-gray-200 border-gray-200 border h-9 w-9 p-2 rounded-full shadow-md hover:text-gray-100 hover:bg-violet-100 hover:border-violet-400 invisible group-hover:visible fill-gray-500 hover:fill-gray-600'/>

@@ -33,7 +33,7 @@ function SignUp() {
          
 
             if(response.status === 200){
-                navigate('/login')
+                navigate('/')
             }
 
 
@@ -66,7 +66,7 @@ function SignUp() {
                  <p className="mt-2 text-center text-base text-black/60">
                     Already have an account?&nbsp;
                     <Link
-                        to="/login"
+                        to="/"
                         className="font-medium text-primary transition-all duration-200 hover:underline">
                         Login
                     </Link>

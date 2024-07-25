@@ -53,7 +53,7 @@ function UploadDialog({open, setOpen}) {
             // console.log(JSON.stringify(response.data));
             if(response){
                 setOpen(false);
-                navigate(`/parsePage/${response.data.document_id}`);
+                navigate(`/app/parsePage/${response.data.document_id}`);
             }
             // navigate('/parsePage',{state:{responseData:response.data}});
 
