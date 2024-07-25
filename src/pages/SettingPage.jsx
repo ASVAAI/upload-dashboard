@@ -1,5 +1,7 @@
 import React from 'react'
-import {SettingHeader, SettingSubHeader } from '../components'
+import SettingHeader from '../components/Setting/SettingHeader'
+import SettingSubHeader from '../components/Setting/SettingSubHeader'
+
 
 function SettingPage() {
   return (

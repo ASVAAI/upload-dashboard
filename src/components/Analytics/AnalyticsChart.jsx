@@ -12,7 +12,7 @@ function AnalyticsChart() {
     { id: 4, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
     { id: 5, sourceip: '172.31.8.48', source: 'Normal Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
     { id: 6, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 7, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 7, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-24T19:39:16.926Z', Status: 'Success' },
     { id: 8, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
     { id: 9, sourceip: '172.31.8.48', source: 'AI Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
     { id: 10, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
@@ -92,7 +92,7 @@ function AnalyticsChart() {
         filteredData = data;
         break;
     }
-    console.log('Filtered Data:', filteredData); // Log the filtered data for debugging
+    // console.log('Filtered Data:', filteredData); // Log the filtered data for debugging
     return filteredData;
   };
 
@@ -142,7 +142,7 @@ function AnalyticsChart() {
       }
     });
 
-    const colors = ["#8b5cf6", "#a78bfa", "#c4b5fd"];
+    const colors = ["#6d28d9", "#8b5cf6", "#c4b5fd"];
     const sourceColors = sources.reduce((acc, source, index) => {
       acc[source] = colors[index % colors.length];
       return acc;
@@ -152,9 +152,10 @@ function AnalyticsChart() {
       label: source,
       data: sourceCounts[source],
       backgroundColor: sourceColors[source],
-      borderColor: sourceColors[source],
-      borderWidth: 1,
-      // barThickness :20,
+      // borderColor: sourceColors[source],
+      // borderWidth: 1,
+      barThickness :20,
+      
     }));
 
     setChartData({
@@ -172,9 +173,9 @@ function AnalyticsChart() {
   };
 
   return (
-    <div>
-      <div className="bg- flex justify-end mb-4">
-        <select onChange={handleFilterChange} className="!border-2 !border-violet-400 rounded text-gray-400">
+    <div className=''>
+      <div className="bg-violet-500 flex justify-end mb- py-1 px-1 rounded-t-md">
+        <select onChange={handleFilterChange} className="!border-2 !border-violet-400 rounded text-violet-500 !outline-none px-2">
           <option value="all">All</option>
           <option value="today">Today</option>
           <option value="yesterday">Yesterday</option>
@@ -184,7 +185,7 @@ function AnalyticsChart() {
           <option value="custom">Custom Range</option>
         </select>
         {filter === 'custom' && (
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 px-2">
             <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
@@ -192,7 +193,7 @@ function AnalyticsChart() {
               startDate={startDate}
               endDate={endDate}
               placeholderText="Start Date"
-              className="!border-2 !border-violet-400 rounded text-gray-400"
+              className="!border-2 !border-violet-400 rounded text-violet-500 !outline-none px-1 placeholder:text-violet-400"
             />
             <DatePicker
               selected={endDate}
@@ -202,12 +203,12 @@ function AnalyticsChart() {
               endDate={endDate}
               placeholderText="End Date"
               minDate={startDate}
-              className="!border-2 !border-violet-400 rounded text-gray-400"
+              className="!border-2 !border-violet-400 rounded text-violet-500 !outline-none px-1 placeholder:text-violet-400"
             />
           </div>
         )}
       </div>
-      <div className="">
+      <div className="flex h-[26rem] justify-center w-full">
         <Bar
           data={chartData}
           options={{

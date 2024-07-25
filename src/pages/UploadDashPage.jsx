@@ -1,12 +1,14 @@
+import ParserHeader from "../components/Dashboard/ParserHeader"
+import ParserSubHeader from '../components/Dashboard/ParserSubHeader'
 
-import {ParserHeader, ParserSubHeader } from '../components'
+
 
 function UploadDashPage() {
   return (
     <>
-        <section className='bg-gray-300 max-w-full pb-10 '>
+        <section className='bg-violet-50 max-w-full h-screen pb-10 font-titillium_web  '>
           <div className='px-2 '>
-            <div>
+            <div className="">
               <ParserHeader/>
             </div>
             <div>

@@ -1,9 +1,9 @@
 import React from 'react'
-import { SignUp } from '../components'
+import SignUp from '../components/SignUp/SignUp'
 
 function SignUpPage() {
   return (
-    <section>
+    <section className='font-titillium_web'>
       <SignUp/>
     </section>
   )

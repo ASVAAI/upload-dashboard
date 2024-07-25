@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
-import {Input ,Logo} from './index'
+import Input from '../Input'
+import Logo from '../Logo'
 import  {useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import conf from '../conf'
-import GoogleLogo from '../assets/GoogleLogo.svg'
+import conf from '../../conf'
+import GoogleLogo from '../../assets/GoogleLogo.svg'
 
 function SignUp() {
     const [error, setError] = useState('');
@@ -55,7 +56,7 @@ function SignUp() {
             <div className='absolute top-0 right-1/2  w-72 h-72 bg-purple-400 rounded-full filter blur-xl opacity-60  '></div>
         <div
             className='flex items-center justify-center w-full bg-gray-300/20 py-16 relative min-h-screen'>
-            <div className={`mx-auto w-full max-w-lg bg-gray-200 rounded-xl p-10 border border-black/10 drop-shadow-xl`}>
+            <div className={`mx-auto w-full max-w-lg bg-gray-50 rounded-xl p-10 border border-black/10 drop-shadow-xl`}>
                 <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo />
@@ -74,7 +75,7 @@ function SignUp() {
                 <form onSubmit={handleSubmit(submitForm)} className='mt-8'>
             <div className='space-y-5'>
                 <Input
-                placeholder="Your First Name"
+                placeholder="First Name*"
                 type="text"
                 {...register("first_name", {
                     required: "First name is required"
@@ -83,7 +84,7 @@ function SignUp() {
                 {errors.first_name && <p className="text-red-600">{errors.first_name.message}</p>}
 
                 <Input
-                placeholder="Your Last Name"
+                placeholder="Last Name*"
                 type="text"
                 {...register("last_name", {
                     required: "Last name is required",
@@ -92,7 +93,7 @@ function SignUp() {
                 {errors.last_name && <p className="text-red-600">{errors.last_name.message}</p>}
                 
                 <Input
-                placeholder="Enter Your Email"
+                placeholder="Work e-mail*"
                 type="email"
                 {...register("email", {
                     required: true,
@@ -106,7 +107,7 @@ function SignUp() {
                 <Input
                 type="password"
                 placeholder="Enter Your Password"
-                {...register("password", {
+                {...register("Password", {
                     required: "Password is required",
                     minLength : {
                         value : 8,
@@ -127,7 +128,7 @@ function SignUp() {
             </div>
                 </form>
 
-                <div className='flex mt-3 w-full bg-gray-300 hover:bg-gray-50 rounded h-full py-1 text-gray-400 text-xl font-semibold  drop-shadow-md justify-center items-center space-x-2 hover:text-'>
+                <div className='flex mt-3 w-full bg-gray-50 hover:bg-gray-200 rounded h-full  text-gray-400 text-xl font-semibold  drop-shadow-md justify-center items-center space-x-2 hover:text-'>
                     <img src={GoogleLogo} alt = 'asva logo' width="40" height="40"/>
                     <button type="button"
                     className="">Sign in with Google</button>

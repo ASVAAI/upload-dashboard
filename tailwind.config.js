@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        roboto:["Roboto"],
+        montserrat:["Montserrat"],
+        nunitosans:["Nunito Sans"],
+        titillium_web:["Titillium Web"]
+      }
+    },
     
   },
   plugins: [],

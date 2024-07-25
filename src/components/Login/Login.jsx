@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
-import {Input ,Logo} from './index'
-import  {set, useForm} from 'react-hook-form'
+import Input from '../Input'
+import Logo from '../Logo'
+import  { useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import conf from '../conf'
-import GoogleLogo from '../assets/GoogleLogo.svg'
+import conf from '../../conf'
+import GoogleLogo from '../../assets/GoogleLogo.svg';
 
 function Login() {
     const [error, setError] = useState('');
@@ -54,7 +55,7 @@ function Login() {
         <div
             className='flex items-center justify-center w-full bg-gray-300/20 py-16 relative min-h-screen'
             >
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10 drop-shadow-xl`}>
+        <div className={`mx-auto w-full max-w-lg bg-gray-50 rounded-xl p-10 border border-black/10 drop-shadow-xl`}>
         <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo />
@@ -74,7 +75,7 @@ function Login() {
         <form onSubmit={handleSubmit(submitForm)} className='mt-8'>
             <div className='space-y-5'>
                 <Input
-                placeholder="Enter Email"
+                placeholder="Work-e-mail*"
                 type="email"
                 {...register("email", {
                     required: true,
@@ -86,7 +87,7 @@ function Login() {
                 />
                 <Input
                 type="password"
-                placeholder="Enter Password"
+                placeholder="Password"
                 {...register("password", {
                     required: true,
                 })}
@@ -97,7 +98,7 @@ function Login() {
                 >Login</button>
             </div>
         </form>
-        <div className='flex mt-3 w-full bg-gray-300 hover:bg-gray-50 rounded h-full py-1 text-gray-400 text-xl font-semibold  drop-shadow-md justify-center items-center space-x-2 hover:text-'>
+        <div className='flex mt-3 w-full bg-gray-50 hover:bg-gray-200 rounded h-full  text-gray-400 text-xl font-semibold  drop-shadow-md justify-center items-center space-x-2 '>
                     <img src={GoogleLogo} alt = 'asva logo' width="40" height="40"/>
                     <button type="button"
                     className="">Login with Google</button>

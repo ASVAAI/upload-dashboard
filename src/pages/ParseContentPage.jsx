@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { ParsePageHeader, ParsePageSubHeader } from '../components';
-import { useLocation, useParams } from 'react-router-dom';
+import ParsePageHeader from '../components/ParsePage/ParsePageHeader'
+import ParsePageSubHeader from '../components/ParsePage/ParsePageSubHeader'
+import { useParams } from 'react-router-dom';
 import conf from '../conf';
 import axios from 'axios';
 
@@ -9,10 +10,9 @@ function ParseContentPage() {
   const [error, setError] = useState();
   const[data,setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  // const location = useLocation();
-  // const responseData = location.state?.responseData;
+
   const params = useParams();
-  console.log(params.id);
+  // console.log(params.id);
 
   useEffect(()=>{
     const fetchData = async()=>{
@@ -32,8 +32,8 @@ function ParseContentPage() {
           setData(response.data)
           // console.log("RESPONSE:::",response.data)
           setError('')
-          console.log("data fetched")
-          console.log(response.data)
+          // console.log("data fetched")
+          // console.log(response.data)
         }
         
       } catch (error) {
@@ -48,17 +48,13 @@ function ParseContentPage() {
   },[params.id])
   return (
     <>
-        <section className='bg-gray-300 max-w-full pb-10 '>
+        <section className='bg-violet-50 max-w-full pb-10  font-titillium_web'>
           <div className='px-2 '>
             <div>
               <ParsePageHeader />
             </div>
             <div>
-              {/* <ParsePageSubHeader responseData={responseData}/> */}
-
-              {/* {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-              <ParsePageSubHeader data ={data}/> */}
-
+              
               {loading ? (
                 <p>Loading...</p>
               ): error ? (

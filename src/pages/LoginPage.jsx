@@ -1,11 +1,11 @@
 import React from 'react'
-import { Login, Logo } from '../components'
+import Login from '../components/Login/Login'
 
 
 function LoginPage() {
   return (
     <>
-        <section>
+        <section className='font-titillium_web'>
             <Login/>
         </section>
     </>

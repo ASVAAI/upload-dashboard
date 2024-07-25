@@ -83,19 +83,19 @@ function AnalyticsList() {
   };
 
   return (
-    <section className='max-w-full max-h-96 overflow-auto border border-violet-200 bg-gray-50'>
-      <div className="bg- flex justify-end mb-4">
-        <select onChange={handleFilterChange} className="!border-2 !border-violet-400 rounded text-gray-400">
+    <section className='max-w-full max-h-96 overflow-auto border border-violet-500 bg-gray-50 py-'>
+      <div className="bg-violet-200 flex justify-end mb- py-1 px-1 ">
+        <select onChange={handleFilterChange} className="!border-2 !border-violet-400 rounded text-violet-500 !outline-none px-2">
           <option value="all">All</option>
           <option value="today">Today</option>
           <option value="yesterday">Yesterday</option>
           <option value="thisMonth">This Month</option>
           <option value="lastMonth">Last Month</option>
           <option value="thisYear">This Year</option>
-          <option value="custom">Custom Range</option>
+          <option   value="custom">Custom Range</option>
         </select>
         {showDatePicker && (
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 px-2">
             <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
@@ -103,7 +103,7 @@ function AnalyticsList() {
               startDate={startDate}
               endDate={endDate}
               placeholderText="Start Date"
-              className="!border-2 !border-violet-400 rounded text-gray-400"
+              className="!border-2 !border-violet-400 rounded text-violet-500 !outline-none px-1 placeholder:text-violet-400"
             />
             <DatePicker
               selected={endDate}
@@ -113,7 +113,7 @@ function AnalyticsList() {
               endDate={endDate}
               placeholderText="End Date"
               minDate={startDate}
-              className="!border-2 !border-violet-400 rounded text-gray-400"
+              className="!border-2 !border-violet-400 rounded text-violet-500 !outline-none px-1 placeholder:text-violet-400"
             />
           </div>
         )}
