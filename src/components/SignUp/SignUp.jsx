@@ -107,7 +107,7 @@ function SignUp() {
                 <Input
                 type="password"
                 placeholder="Enter Your Password"
-                {...register("Password", {
+                {...register("password", {
                     required: "Password is required",
                     minLength : {
                         value : 8,
