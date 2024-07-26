@@ -11,6 +11,7 @@ import AnalyticsPage from './pages/AnalyticsPage.jsx'
 import ParseContentPage from './pages/ParseContentPage.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 import SiderBar from './components/SiderBar.jsx'
+import UserSetting from './pages/UserSetting.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
           <Route path="setting" element={<SettingPage />} />
           <Route path="analytics" element={<AnalyticsPage />} />
           <Route path="parsePage/:id" element={<ParseContentPage />} />
+          <Route path="usersetting" element={<UserSetting />} />
         </Route>
       </Route>
     </Route>

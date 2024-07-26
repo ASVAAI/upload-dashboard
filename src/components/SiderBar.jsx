@@ -4,6 +4,7 @@ import { Link, Outlet, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import conf from '../conf';
 import Logo from '../assets/LogoASVAAI.svg'
+import { IconSettings } from '@tabler/icons-react';
 
 
 function SiderBar() {
@@ -120,14 +121,12 @@ function SiderBar() {
             </Link>
          </li>
 
-         {/* <li>
-            <Link to={'/app/upload'} className="flex font-semibold items-center p-2  rounded-lg text-white hover:bg-gray-100 dark:hover:bg-gray-100 group bg-violet-500 shadow-md hover:text-gray-500">
-               <svg className="w-5 h-5 transition duration-75 text-gray-100 group-hover:text-gray-900 dark:group-hover:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
-               </svg>
-               <span className="flex-1 ms-3 whitespace-nowrap">Log In</span>
+         <li>
+            <Link to={'/app/usersetting'} className="flex font-semibold items-center p-2  rounded-lg text-white hover:bg-gray-100 dark:hover:bg-gray-100 group bg-violet-500 shadow-md hover:text-gray-500 group">
+            <IconSettings className='group-hover:text-gray-400' stroke={2} />
+               <span className="flex-1 ms-3 whitespace-nowrap">Setting</span>
             </Link>
-         </li> */}
+         </li>
          {/* <li>
             <Link to={'/app/upload'} className="flex items-center p-2  rounded-lg text-white hover:bg-gray-100 dark:hover:bg-gray-100 group bg-violet-500 shadow-md hover:text-gray-500 font-semibold">
                <svg className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-50 group-hover:text-gray-900 dark:group-hover:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
