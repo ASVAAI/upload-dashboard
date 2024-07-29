@@ -19,7 +19,7 @@ function SettingSubHeader() {
                     <h3 className='text-white hover:text-violet-300 text-xl'>Resume&apos;s</h3>
                     <h3 className='text-white hover:text-violet-300 text-xl'>Job Description</h3>
                 </div>
-                <div className='flex text-base font-semibold cursor-pointer py-2 px-3 text-gray-100 bg-violet-500 rounded-full hover:text-violet-500 hover:bg-violet-100 group border border-violet-100' onClick={handleNavigate}><IconCaretLeftFilled className='text-gray-100 group-hover:text-violet-500 group-hover:bg-violet-100'/>BACK</div>
+                <div className='flex text-base font-semibold cursor-pointer py-2 px-3 text-violet-500 bg-gray-50 rounded-lg hover:text-white hover:bg-violet-500 group border-2 border-violet-300 sm:hover:-translate-y-1  ease-in-out duration-500 transition-all drop-shadow-xl shadow-md sm:hover:shadow-violet-300  ' onClick={handleNavigate}><IconCaretLeftFilled className='text-violet-500 group-hover:text-white  '/>BACK</div>
             </div>
             <div className='p-2'>
                 <SettingContent/>
