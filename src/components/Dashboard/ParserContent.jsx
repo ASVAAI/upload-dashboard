@@ -31,7 +31,7 @@ function ParserContent({data , refetchData}) {
     <main>
         <div className=" ">
             <div className="flex w-full py-6 bg-violet-400 flex-col sm:flex-row sm:justify-between ">
-                <div className="flex px-4 text-xl font-semibold "><h1>Parsed Resume&apos;s ({filteredData.length})</h1></div>
+                <div className="flex px-4 text-xl font-semibold "><h1>Parsed Resume ({filteredData.length})</h1></div>
                 <div className="flex px-3 items-center space-x-4">
                     <div>
                         <Search  data={data} onSearch ={handleSearch}  />
