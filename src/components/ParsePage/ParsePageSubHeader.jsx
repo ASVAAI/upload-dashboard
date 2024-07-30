@@ -39,12 +39,18 @@ function ParsePageSubHeader({data}) {
                 url: `${conf.BackendUrl}/export/${params.id}`,
                 headers: { 
                   'Authorization': `Token ${getToken}`
-                }
+                },
+                responseType: 'blob'
               };
 
               const response = await axios.request(config)
 
               if(response){
+                let blob = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+                let link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = 'resume.xlsx';
+                link.click();
                 toast.success("Downloaded Successfully")
               }
 
