@@ -6,21 +6,21 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 function AnalyticsChart() {
   const data = [
-    { id: 1, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 2, sourceip: '172.31.8.48', source: 'AI Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 3, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 4, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 5, sourceip: '172.31.8.48', source: 'Normal Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 6, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 7, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-24T19:39:16.926Z', Status: 'Success' },
-    { id: 8, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 9, sourceip: '172.31.8.48', source: 'AI Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 10, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 11, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 12, sourceip: '172.31.8.48', source: 'Normal Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 13, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 14, sourceip: '172.31.8.48', source: 'Resume Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
-    { id: 15, sourceip: '172.31.8.48', source: 'AI Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 1, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 2, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 3, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 4, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 5, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 6, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 7, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-24T19:39:16.926Z', Status: 'Success' },
+    { id: 8, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 9, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 10, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 11, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 12, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 13, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 14, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
+    { id: 15, sourceip: '172.31.8.48', source: 'CV Parser', Time: '2024-07-18T19:39:16.926Z', Status: 'Success' },
   ];
 
   const generateLabels = (filter) => {

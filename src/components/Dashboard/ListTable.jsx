@@ -169,7 +169,7 @@ function ListTable({data,refetchData}) {
                         </td>
                         <td className='px-2'>
                             <div className='flex justify-start gap-x-2'>
-                                {/* {item.tags.map((each)=>(<p key={each} className='border-gray-400 border  rounded-full px-2'>{each}</p>))} */}
+                                <p className='border-gray-400 border  rounded-full px-2'>resume</p>
                             </div>
                         </td>
                         <td className='py-1 '>

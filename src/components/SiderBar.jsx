@@ -138,7 +138,7 @@ function SiderBar() {
             </Link>
          </li> */}
          <li>
-            <div onClick={handleLogout} className="flex items-center p-1  rounded-lg text-white hover:bg-gray-100 dark:hover:bg-gray-100 group bg-violet-500 shadow-md hover:text-gray-500 font-semibold">
+            <div onClick={handleLogout} className="flex items-center p-1  rounded-lg text-white hover:bg-gray-100 dark:hover:bg-gray-100 group bg-violet-500 shadow-md hover:text-gray-500 font-semibold cursor-pointer">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
